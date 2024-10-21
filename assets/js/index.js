@@ -15,6 +15,6 @@ function cargarContenidoHTML(ruta, elementoID) {
 }
 
 // Cargar el contenido HTML en el div con id="contenido"
-//cargarContenidoHTML('assets/html/header.html', 'index-header');
+cargarContenidoHTML('assets/html/header.html', 'index-header');
 cargarContenidoHTML('assets/html/index-content.html', 'index-content');
 cargarContenidoHTML('assets/html/footer.html', 'index-footer');
