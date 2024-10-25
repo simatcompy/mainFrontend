@@ -10,3 +10,18 @@
 .footer{
     min-height: 12em;
 }
+
+
+#hola{
+    margin-bottom: 2em;
+}
+
+
+.importante{
+    color: blue;
+
+}
+
+.text-color{
+    color: rgb(194, 151, 6);
+}
