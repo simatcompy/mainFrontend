@@ -14,7 +14,27 @@ function cargarContenidoHTML(ruta, elementoID) {
         .catch(error => console.error('Error:', error));  // Manejamos errores.
 }
 
+function cargarLinkContent(ruta, elementoID){
+    fetch(ruta)  // Hacemos la solicitud al archivo HTML.
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al cargar el archivo HTML');
+        }
+        return response.text();  // Extraemos el texto (contenido HTML).
+    })
+    .then(data => {
+        // Insertamos el contenido en el elemento con el ID especificado.
+        document.getElementById(elementoID).addEventListener( "click", ()=>{
+            cargarContenidoHTML(ruta, 'index-content');
+        })
+    })
+    .catch(error => console.error('Error:', error));  // Manejamos errores.
+}
+
 // Cargar el contenido HTML en el div con id="contenido"
 cargarContenidoHTML('assets/html/header.html', 'index-header');
 cargarContenidoHTML('assets/html/index-content.html', 'index-content');
 cargarContenidoHTML('assets/html/footer.html', 'index-footer');
+
+// Si se quiere cargar una página
+cargarLinkContent('assets/html/biseccion.html', 'biseccion_link');
